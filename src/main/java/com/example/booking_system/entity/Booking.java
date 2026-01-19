@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * Java object that will be stored into the "bookings" table
+ */
 @Entity
 @Table(name = "bookings")
 @Data

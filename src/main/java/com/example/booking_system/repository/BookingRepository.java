@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Allows interaction with "bookings" table. Also includes a couple custom methods specific to the hotel booking system.
+ */
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
     List<Booking> findByGuestEmail(String guestEmail);

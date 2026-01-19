@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Java object that will be stored into the "rooms" table
+ */
 @Entity
 @Table(name = "rooms")
 @Data
