@@ -10,6 +10,26 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - booking-network
+
+  app:
+    build: .
+    container_name: booking-app
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/booking_db
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin123
+    ports:
+      - "8080:8080"
+    networks:
+      - booking-network
 
 volumes:
   postgres_data:
+
+networks:
+  booking-network:
+    driver: bridge
